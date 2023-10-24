@@ -41,7 +41,7 @@ module.exports = ({ env }) => ({
 });
 EOF
 npm install mysql
-npm run build
+npm run develop
 yarn global add pm2
 echo 'export PATH="$PATH:$(yarn global bin)"' >> ~/.bashrc
 source ~/.bashrc
