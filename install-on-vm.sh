@@ -54,7 +54,7 @@ module.exports = {
       name: 'strapi-dev',
       cwd: '/srv/strapi/blog',
       script: 'npm',
-      args: 'start',
+      args: 'run develop',
       env: {
         NODE_ENV: 'development',
         DB_HOST: 'localhost',
@@ -69,6 +69,7 @@ module.exports = {
 };
 EOF
 pm2 start ecosystem.config.js
+chmod 777 /srv/strapi/blog/src/api
 pm2 startup systemd
 exit
 env PATH=$PATH:/usr/bin /home/strapi/.config/yarn/global/node_modules/pm2/bin/pm2 startup systemd -u strapi --hp /home/strapi
